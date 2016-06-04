@@ -54,6 +54,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'carrierwave'
 
 group :development do
   gem 'better_errors'
@@ -62,6 +63,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
+
 end
 
 group :production do
