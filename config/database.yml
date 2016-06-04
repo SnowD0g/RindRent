@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: rindrend_development
+  username: postgres
+  password: b0b8gghf
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: rindrend_test
+  username: postgres
+  password: b0b8gghf
+
+production:
+  <<: *default
+  database: rindrend
+  username: postgres
+  password: b0b8gghf
