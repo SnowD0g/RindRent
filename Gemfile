@@ -64,6 +64,8 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
+  gem 'factory_girl_rails'
+  gem 'faker'
 
 end
 
