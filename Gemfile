@@ -56,6 +56,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'carrierwave'
 
+
 group :development do
   gem 'better_errors'
   gem 'html2haml'
