@@ -17,9 +17,3 @@ test:
   database: rindrend_test
   username: postgres
   password: b0b8gghf
-
-production:
-  <<: *default
-  database: d9njjogi6do4nd
-  username: dlpopdzpjwemgt
-  password: PYN--12BNeze0UaWuTJ5pRGgRp
