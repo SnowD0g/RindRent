@@ -292,6 +292,7 @@ DEPENDENCIES
   rails_layout
   sass-rails (~> 5.0)
   shoulda
+  shoulda-matchers
   simple_form
   spring
   therubyracer
