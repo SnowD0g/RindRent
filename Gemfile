@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'better_errors'
@@ -34,8 +35,13 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
+end
 
-
+group :test do
+  gem 'database_cleaner'
+  gem 'mocha'
+  gem 'shoulda'
+  gem 'capybara'
 end
 
 group :production do
