@@ -8,17 +8,18 @@ class BookTest < ActiveSupport::TestCase
     @book = FactoryGirl.build(:book)
   end
 
-
   should validate_presence_of(:title)
   should validate_presence_of(:isbn)
   should allow_value('9788175257665').for(:isbn)
+  should allow_value('1234567890').for(:isbn)
   should allow_value('123456789X').for(:isbn)
+  should allow_value('97-8-81-75-257-665').for(:isbn)
 
-  should_not allow_value('peppa_pig').for(:isbn)
-  should_not allow_value('123456').for(:isbn)
-  should_not allow_value('123456789').for(:isbn)
-  #TODO fixare regular expression utilizzata per la validazione del formato di un codice isbn !!
-  #should_not allow_value('1234567890123456789465498798465465456').for(:isbn)
+  should_not allow_value('').for(:isbn)
+  should_not allow_value('1').for(:isbn)
+  should_not allow_value('978817525766').for(:isbn)
+  should_not allow_value('978817525766875').for(:isbn)
+
 
   test 'default cover if none is assigned' do
     @book.cover = nil
