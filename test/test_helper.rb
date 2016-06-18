@@ -5,17 +5,21 @@ require 'faker'
 require 'rails/test_help'
 require 'database_cleaner'
 
-DatabaseCleaner.strategy = :transaction
-
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
+  include ActiveModelSerializers::Test::Serializer
 
-  setup do
+  DatabaseCleaner.strategy = :truncation
+
+  def setup
     DatabaseCleaner.start
   end
 
-  teardown do
+  def teardown
     DatabaseCleaner.clean
   end
-  # Add more helper methods to be used by all tests here...
+
+  def json(body)
+    JSON.parse(body, symbolize_names: true)
+  end
 end

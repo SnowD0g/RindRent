@@ -18,6 +18,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'carrierwave'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
    gem 'byebug'
