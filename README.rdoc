@@ -1,5 +1,7 @@
 == README
 
+A Rails application to track items loaned to friends.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

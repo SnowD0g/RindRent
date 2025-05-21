@@ -1,0 +1,30 @@
+%h1 Loaned Items
+
+%table
+  %thead
+    %tr
+      %th Item Name
+      %th Friend Name
+      %th Loan Date
+      %th Returned?
+      %th
+      %th
+      %th
+
+  %tbody
+    - @loaned_items.each do |loaned_item|
+      %tr
+        %td= loaned_item.title
+        %td= loaned_item.friend_name
+        %td= loaned_item.loan_date
+        %td= loaned_item.returned ? "Yes (#{l(loaned_item.returned_date, format: :short) if loaned_item.returned_date})" : 'No'
+        %td= link_to 'Show', loaned_item
+        %td= link_to 'Edit', edit_loaned_item_path(loaned_item)
+        %td= link_to 'Destroy', loaned_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td
+          - unless loaned_item.returned?
+            = link_to 'Mark as Returned', mark_as_returned_loaned_item_path(loaned_item), method: :patch, class: 'button-xs' # Assuming a CSS class for styling
+
+%br
+
+= link_to 'New Loaned Item', new_loaned_item_path

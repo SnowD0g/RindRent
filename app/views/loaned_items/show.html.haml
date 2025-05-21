@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b Item Name:
+  = @loaned_item.title
+%p
+  %b Friend Name:
+  = @loaned_item.friend_name
+%p
+  %b Loan Date:
+  = @loaned_item.loan_date
+%p
+  %b Returned:
+  = @loaned_item.returned ? 'Yes' : 'No'
+- if @loaned_item.returned_date
+  %p
+    %b Returned Date:
+    = @loaned_item.returned_date
+
+%p
+  - unless @loaned_item.returned?
+    = link_to 'Mark as Returned', mark_as_returned_loaned_item_path(@loaned_item), method: :patch, class: 'button' # Assuming a CSS class for styling
+
+= link_to 'Edit', edit_loaned_item_path(@loaned_item)
+\|
+= link_to 'Back', loaned_items_path
